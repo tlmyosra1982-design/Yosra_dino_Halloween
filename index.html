@@ -9,69 +9,130 @@
 
 <style>
 :root{
---cream:#fff8ec;--paper:#fffdf8;--purple:#68468b;
---purple2:#9272b2;--lavender:#eadcf5;--deep:#30203f;
---orange:#ff9d42;--gold:#ffda70;--ink:#382b43;
---muted:#82748b;--green:#3c8047;--red:#a64238;
+  --cream:#fff8ec;
+  --paper:#fffdf8;
+  --purple:#68468b;
+  --purple2:#9272b2;
+  --lavender:#eadcf5;
+  --deep:#30203f;
+  --orange:#ff9d42;
+  --gold:#ffda70;
+  --ink:#382b43;
+  --muted:#82748b;
+  --green:#3c8047;
+  --red:#a64238;
 }
 *{box-sizing:border-box}
 body{
-margin:0;color:var(--ink);font-family:Tahoma,Arial,sans-serif;
-background:radial-gradient(ellipse at 8% 5%,#e9dcf5,transparent 35%),
-radial-gradient(ellipse at 92% 30%,#ffe4c6,transparent 30%),
-linear-gradient(145deg,#fff9ef,#f3e8f8 60%,#fff2e2);
-min-height:100vh
+  margin:0;
+  color:var(--ink);
+  font-family:Tahoma,Arial,sans-serif;
+  background:
+    radial-gradient(ellipse at 8% 5%,#e9dcf5,transparent 35%),
+    radial-gradient(ellipse at 92% 30%,#ffe4c6,transparent 30%),
+    linear-gradient(145deg,#fff9ef,#f3e8f8 60%,#fff2e2);
+  min-height:100vh;
 }
 button{font:inherit;cursor:pointer}
 button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .app{max-width:1000px;margin:auto;padding:14px 12px 35px}
 header{
-padding:24px;border-radius:25px;color:#fff;
-background:linear-gradient(125deg,#30203f,#68468b 65%,#9876b6);
-box-shadow:0 12px 32px #4d32631a
+  padding:24px;border-radius:25px;color:#fff;
+  background:linear-gradient(125deg,#30203f,#68468b 65%,#9876b6);
+  box-shadow:0 12px 32px #4d32631a;
 }
 .brand{color:#ffe0ad;font-weight:900;letter-spacing:2px;font-size:.8rem}
 h1{font-size:clamp(1.7rem,5vw,2.7rem);margin:12px 0}
 header p{line-height:1.9;margin:0;color:#f5eafc}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.chips span{background:#ffffff18;border:1px solid #ffffff35;border-radius:30px;padding:7px 11px;font-size:.8rem}
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:15px 0}
-.tab{border:1px solid #dfd0e9;background:#fffaf4;color:var(--purple);border-radius:14px;padding:11px 4px;font-weight:850}
+.chips span{
+  background:#ffffff18;border:1px solid #ffffff35;
+  border-radius:30px;padding:7px 11px;font-size:.8rem;
+}
+.tabs{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:7px;margin:15px 0;
+}
+.tab{
+  border:1px solid #dfd0e9;background:#fffaf4;color:var(--purple);
+  border-radius:14px;padding:11px 4px;font-weight:850;
+}
 .tab span{display:block;font-size:1.25rem;margin-bottom:4px}
 .tab.active{background:var(--purple);color:white}
-.panel{display:none}.panel.active{display:block}
-.card{background:linear-gradient(145deg,#fffdf8,#fff8ed);border:1px solid #e8dced;border-radius:21px;padding:17px;margin-bottom:14px;box-shadow:0 10px 28px #4d326313}
+.panel{display:none}
+.panel.active{display:block}
+.card{
+  background:linear-gradient(145deg,#fffdf8,#fff8ed);
+  border:1px solid #e8dced;border-radius:21px;
+  padding:17px;margin-bottom:14px;
+  box-shadow:0 10px 28px #4d326313;
+}
 .heading{display:flex;justify-content:space-between;gap:10px;margin-bottom:15px}
 .heading h2{margin:0 0 6px;color:var(--deep);font-size:1.25rem}
 .heading p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.8}
-.badge{background:var(--lavender);color:var(--purple);border-radius:30px;padding:7px 10px;font-size:.72rem;font-weight:850;white-space:nowrap;height:max-content}
-.story-section{padding:15px;margin:12px 0;border-radius:16px;background:#fffaf2;border:1px solid #eadfed}
+.badge{
+  background:var(--lavender);color:var(--purple);
+  border-radius:30px;padding:7px 10px;font-size:.72rem;
+  font-weight:850;white-space:nowrap;height:max-content;
+}
+.story-section{
+  padding:15px;margin:12px 0;border-radius:16px;
+  background:#fffaf2;border:1px solid #eadfed;
+}
 .story-section h3{margin:0 0 12px;color:var(--purple);font-size:1rem}
-.fr-text{direction:ltr;text-align:left;line-height:2;font-size:1rem;color:#392847;margin:0 0 12px}
+.fr-text{
+  direction:ltr;text-align:left;line-height:2;
+  font-size:1rem;color:#392847;margin:0 0 12px;
+}
 .fa-text{line-height:2;font-size:.93rem;color:#654d71;margin:0}
 .story-tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.primary,.secondary{border:0;border-radius:12px;padding:10px 14px;font-weight:850}
+.primary,.secondary{
+  border:0;border-radius:12px;padding:10px 14px;font-weight:850;
+}
 .primary{background:linear-gradient(135deg,#ffb45e,#ff9239);color:#432b29}
 .secondary{background:#eadff3;color:var(--purple)}
-.vocab-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-.vocab{display:flex;align-items:center;gap:9px;padding:10px;border-radius:13px;background:#f0e6f6;border:1px solid #e3d5ec}
+.vocab-list{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;
+}
+.vocab{
+  display:flex;align-items:center;gap:9px;padding:10px;
+  border-radius:13px;background:#f0e6f6;border:1px solid #e3d5ec;
+}
 .vocab .ve{font-size:1.5rem}
 .vocab .words{flex:1;min-width:0}
 .vocab strong{display:block;direction:ltr;text-align:left}
 .vocab small{display:block;color:var(--muted);margin-top:4px}
-.listen{border:0;border-radius:10px;padding:9px;background:#fffaf2;color:var(--purple)}
+.listen{
+  border:0;border-radius:10px;padding:9px;
+  background:#fffaf2;color:var(--purple);
+}
 .levels{display:flex;gap:8px;margin-bottom:14px}
-.level{border:1px solid #dfd0e9;border-radius:12px;padding:9px 14px;background:#f0e5f7;color:var(--purple);font-weight:850}
+.level{
+  border:1px solid #dfd0e9;border-radius:12px;padding:9px 14px;
+  background:#f0e5f7;color:var(--purple);font-weight:850;
+}
 .level.active{background:var(--purple);color:white}
-.row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.85rem;font-weight:850;color:var(--purple);margin:12px 0 8px}
+.row{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;flex-wrap:wrap;font-size:.85rem;
+  font-weight:850;color:var(--purple);margin:12px 0 8px;
+}
 .track{height:8px;background:#e9dff0;border-radius:20px;overflow:hidden}
 .fill{height:100%;width:0;background:linear-gradient(90deg,#9272b2,#ffab4e);transition:width .25s}
-.question{margin-top:16px;padding:17px;border-radius:16px;background:linear-gradient(130deg,#f1e6fa,#fff0dc);border:1px solid #e7d7ed}
+.question{
+  margin-top:16px;padding:17px;border-radius:16px;
+  background:linear-gradient(130deg,#f1e6fa,#fff0dc);
+  border:1px solid #e7d7ed;
+}
 .qlevel{font-size:.75rem;font-weight:900;color:var(--purple)}
 .qtext{font-size:1.15rem;font-weight:850;line-height:1.7;margin:10px 0}
 .hint{color:#796984;font-size:.88rem;line-height:1.8;margin:0 0 12px}
 .answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}
-.answer{min-height:48px;text-align:left;direction:ltr;border:1px solid #e3d5eb;border-radius:12px;background:#fffdf9;padding:11px;color:var(--ink);font-weight:750}
+.answer{
+  min-height:48px;text-align:left;direction:ltr;
+  border:1px solid #e3d5eb;border-radius:12px;
+  background:#fffdf9;padding:11px;color:var(--ink);font-weight:750;
+}
 .answer.correct{background:#e3f3df;border-color:#91c788;color:#286934}
 .answer.wrong{background:#ffe4df;border-color:#e9a092;color:#963b32}
 .feedback{min-height:28px;font-weight:800;font-size:.9rem;line-height:1.8;margin:12px 0}
@@ -81,19 +142,34 @@ header p{line-height:1.9;margin:0;color:#f5eafc}
 .result h3{font-size:1.5rem;margin:8px 0}
 .result p{line-height:1.8;color:var(--muted)}
 .hidden{display:none!important}
+
+/* Pumpkin */
 .pumpkin-layout{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.stage{background:radial-gradient(ellipse at center,#fff1d4,#eee1f3);border:1px solid #e4d4e9;border-radius:20px;padding:8px}
+.stage{
+  background:radial-gradient(ellipse at center,#fff1d4,#eee1f3);
+  border:1px solid #e4d4e9;border-radius:20px;padding:8px;
+}
 .stage svg{display:block;width:100%;max-height:420px}
 .caption{text-align:center;color:var(--purple);font-weight:850;font-size:.9rem}
 .group{padding:13px 0;border-bottom:1px solid #eadfed}
 .group h3{font-size:1rem;margin:0 0 9px}
 .label{display:block;font-size:.8rem;color:var(--muted);font-weight:800;margin-bottom:8px}
 .options{display:flex;flex-wrap:wrap;gap:7px}
-.opt{border:1px solid #e0d0e9;background:#fffaf4;color:var(--purple);border-radius:11px;padding:9px 10px;font-size:.82rem;font-weight:800}
+.opt{
+  border:1px solid #e0d0e9;background:#fffaf4;color:var(--purple);
+  border-radius:11px;padding:9px 10px;font-size:.82rem;font-weight:800;
+}
 .opt.active{background:var(--purple);color:white}
-.toggle{width:100%;display:flex;justify-content:space-between;align-items:center;background:#fff1c9;color:#694b20;border:1px solid #efd699;border-radius:13px;padding:12px;font-weight:850}
+.toggle{
+  width:100%;display:flex;justify-content:space-between;align-items:center;
+  background:#fff1c9;color:#694b20;border:1px solid #efd699;
+  border-radius:13px;padding:12px;font-weight:850;
+}
 .switch{width:42px;height:24px;background:#c4b5ca;border-radius:30px;padding:3px}
-.switch:after{content:"";display:block;width:18px;height:18px;background:white;border-radius:50%;transition:transform .2s}
+.switch:after{
+  content:"";display:block;width:18px;height:18px;
+  background:white;border-radius:50%;transition:transform .2s;
+}
 .toggle[aria-pressed="true"] .switch{background:#d6a72e}
 .toggle[aria-pressed="true"] .switch:after{transform:translateX(18px)}
 .note{color:var(--muted);font-size:.8rem;line-height:1.8}
@@ -101,11 +177,17 @@ header p{line-height:1.9;margin:0;color:#f5eafc}
 @keyframes flutter{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}
 #aura{transform-box:fill-box;transform-origin:center;animation:pulse 1.5s infinite}
 #wings{transform-box:fill-box;transform-origin:center;animation:flutter .5s infinite}
+
+/* Memory */
 .memory-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:9px;margin-bottom:14px}
 .stats{display:flex;flex-wrap:wrap;gap:7px}
 .stat{background:#eee3f5;color:var(--purple);border-radius:10px;padding:8px 10px;font-size:.8rem;font-weight:850}
 .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-.mem{aspect-ratio:.9;min-width:0;border:1px solid #ddcce9;border-radius:13px;background:linear-gradient(140deg,#79599b,#49305f);color:white;display:grid;place-items:center;padding:5px;font-size:1.5rem}
+.mem{
+  aspect-ratio:.9;min-width:0;border:1px solid #ddcce9;
+  border-radius:13px;background:linear-gradient(140deg,#79599b,#49305f);
+  color:white;display:grid;place-items:center;padding:5px;font-size:1.5rem;
+}
 .mem.revealed,.mem.matched{background:linear-gradient(145deg,#fffdf8,#f0e4f7);color:var(--deep)}
 .mem.matched{box-shadow:inset 0 0 0 2px #b9d9a8}
 .mem .content{text-align:center;font-size:clamp(.7rem,2.5vw,.95rem);font-weight:850;overflow-wrap:anywhere}
@@ -113,176 +195,282 @@ header p{line-height:1.9;margin:0;color:#f5eafc}
 #celebration{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:20}
 .falling{position:absolute;top:-40px;animation:fall 2.4s ease-in forwards;font-size:24px}
 @keyframes fall{to{transform:translateY(110vh) rotate(650deg);opacity:0}}
-#toast{position:fixed;z-index:30;bottom:18px;left:50%;transform:translateX(-50%);background:var(--deep);color:white;border-radius:13px;padding:12px 17px;max-width:90%;text-align:center;font-weight:800}
+#toast{
+  position:fixed;z-index:30;bottom:18px;left:50%;
+  transform:translateX(-50%);background:var(--deep);color:white;
+  border-radius:13px;padding:12px 17px;max-width:90%;text-align:center;font-weight:800;
+}
 footer{text-align:center;padding:18px 0 0;color:var(--muted);font-size:.8rem;line-height:1.8}
 @media(max-width:620px){
-.card{padding:13px}.pumpkin-layout{grid-template-columns:1fr}
-.answers{grid-template-columns:1fr}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-.vocab-list{grid-template-columns:1fr}.tab{font-size:.75rem}
+  .card{padding:13px}
+  .pumpkin-layout{grid-template-columns:1fr}
+  .answers{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .vocab-list{grid-template-columns:1fr}
+  .tab{font-size:.75rem}
 }
 @media(prefers-reduced-motion:reduce){
-*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 </style>
 </head>
 
 <body>
 <div class="app">
+
 <header>
-<div class="brand">✦ YOSRA · FRENCH LEARNING</div>
-<h1>🎃 Dino et la citrouille disparue</h1>
-<p>داستان داینو و کدوتنبل گمشده را بخوان، واژگان را یاد بگیر و با بازی‌های هالووینی زبان فرانسه را تمرین کن.</p>
-<div class="chips">
-<span>📖 داستان دوزبانه</span><span>📚 واژگان</span><span>🧠 بازی حافظه</span><span>🔊 تلفظ فرانسوی</span>
-</div>
+  <div class="brand">✦ YOSRA · FRENCH LEARNING</div>
+  <h1>🎃 Dino et la citrouille disparue</h1>
+  <p>داستان داینو و کدوتنبل گمشده را بخوان، واژگان را یاد بگیر و با بازی‌های هالووینی زبان فرانسه را تمرین کن.</p>
+  <div class="chips">
+    <span>📖 داستان دوزبانه</span>
+    <span>📚 واژگان</span>
+    <span>🧠 بازی حافظه</span>
+    <span>🔊 تلفظ فرانسوی</span>
+  </div>
 </header>
 
 <nav class="tabs">
-<button class="tab active" data-panel="story"><span>📖</span>داستان و ترجمه</button>
-<button class="tab" data-panel="vocabulary"><span>📚</span>واژگان</button>
-<button class="tab" data-panel="games"><span>🎮</span>بازی‌ها</button>
+  <button class="tab active" data-panel="story"><span>📖</span>داستان و ترجمه</button>
+  <button class="tab" data-panel="vocabulary"><span>📚</span>واژگان</button>
+  <button class="tab" data-panel="games"><span>🎮</span>بازی‌ها</button>
 </nav>
 
+<!-- STORY -->
 <section class="panel active" id="story">
 <div class="card">
-<div class="heading">
-<div><h2>📖 Histoire : Dino et la citrouille disparue</h2><p>داستان را بخش‌به‌بخش بخوان و تلفظ فرانسوی هر بخش را بشنو.</p></div>
-<span class="badge">A1–A2</span>
-</div>
-<div id="storyContent"></div>
+  <div class="heading">
+    <div>
+      <h2>📖 Histoire : Dino et la citrouille disparue</h2>
+      <p>داستان را بخش‌به‌بخش بخوان و تلفظ فرانسوی هر بخش را بشنو.</p>
+    </div>
+    <span class="badge">A1–A2</span>
+  </div>
+  <div id="storyContent"></div>
 </div>
 </section>
 
+<!-- VOCABULARY -->
 <section class="panel" id="vocabulary">
 <div class="card">
-<div class="heading">
-<div><h2>📚 Vocabulaire d’Halloween</h2><p>واژگان مهم داستان همراه با معنی فارسی و تلفظ.</p></div>
-<span class="badge">French – Persian</span>
-</div>
-<div class="vocab-list" id="mainVocab"></div>
+  <div class="heading">
+    <div>
+      <h2>📚 Vocabulaire d’Halloween</h2>
+      <p>واژگان مهم داستان همراه با معنی فارسی و تلفظ.</p>
+    </div>
+    <span class="badge">French – Persian</span>
+  </div>
+  <div class="vocab-list" id="mainVocab"></div>
 </div>
 </section>
 
+<!-- GAMES -->
 <section class="panel" id="games">
-<div class="card">
-<div class="heading">
-<div><h2>🦖 Le défi de Dino</h2><p>سطح خودت را انتخاب کن و به سؤال‌ها پاسخ بده.</p></div>
-<span class="badge">+10 points</span>
-</div>
-<div class="levels">
-<button class="level active" data-level="a1">⭐ A1</button>
-<button class="level" data-level="a2">🚀 A2</button>
-</div>
-<div class="row">
-<span id="counter">Question 1 / 6</span><span id="score">🏆 Score : 0</span>
-</div>
-<div class="track"><div class="fill" id="progress"></div></div>
-<div id="quizBody">
-<div class="question">
-<div class="qlevel" id="qlevel">NIVEAU A1</div>
-<div class="qtext" id="qtext"></div>
-<p class="hint" id="hint"></p>
-<button class="secondary" id="listenQ" type="button">🔊 شنیدن سؤال</button>
-</div>
-<div class="answers" id="answers"></div>
-<p class="feedback" id="feedback" aria-live="polite"></p>
-<div class="row">
-<span class="score" id="streak">🔥 Série : 0</span>
-<button class="primary" id="next" disabled>سؤال بعدی ←</button>
-</div>
-</div>
-<div class="result hidden" id="result">
-<div class="emoji" id="resultEmoji">🎉</div>
-<h3 id="resultTitle">Bravo !</h3>
-<p id="resultText"></p>
-<button class="primary" id="restartQuiz">↻ شروع دوباره</button>
-</div>
-</div>
 
 <div class="card">
-<div class="heading">
-<div><h2>🎃 Décore ta citrouille</h2><p>کدوتنبل خودت را طراحی کن و کرم شب‌تاب را روشن کن.</p></div>
-<span class="badge">Atelier créatif</span>
-</div>
-<div class="pumpkin-layout">
-<div>
-<div class="stage">
-<svg viewBox="0 0 260 300" role="img" aria-label="Citrouille décorée">
-<defs>
-<radialGradient id="orange" cx="35%" cy="25%" r="80%"><stop stop-color="#ffcf70"/><stop offset=".5" stop-color="#ff9e36"/><stop offset="1" stop-color="#d85b17"/></radialGradient>
-<linearGradient id="stem" x2="1" y2="1"><stop stop-color="#9dbb69"/><stop offset="1" stop-color="#425d2e"/></linearGradient>
-<radialGradient id="glow"><stop stop-color="#fff9a8" stop-opacity=".95"/><stop offset=".4" stop-color="#ffe66b" stop-opacity=".48"/><stop offset="1" stop-color="#ffe66b" stop-opacity="0"/></radialGradient>
-<filter id="blur"><feGaussianBlur stdDeviation="2.5"/></filter>
-</defs>
-<ellipse cx="130" cy="267" rx="79" ry="10" fill="#68468b" opacity=".15"/>
-<ellipse cx="130" cy="168" rx="82" ry="91" fill="url(#orange)"/>
-<ellipse cx="93" cy="168" rx="43" ry="85" fill="#e66c20" opacity=".55"/>
-<ellipse cx="166" cy="168" rx="43" ry="85" fill="#d85b19" opacity=".45"/>
-<ellipse cx="130" cy="167" rx="32" ry="90" fill="#ffb54d" opacity=".65"/>
-<path d="M130 79C122 115 122 213 130 253M92 92C71 128 72 200 94 235M168 92C190 128 188 200 166 235" fill="none" stroke="#bd5019" stroke-width="3" opacity=".45"/>
-<path d="M117 89Q120 67 115 51Q130 42 144 52Q139 68 145 90Z" fill="url(#stem)" stroke="#486235" stroke-width="2"/>
-<g id="eyeRound" fill="#42263c"><ellipse cx="100" cy="146" rx="10" ry="14"/><ellipse cx="160" cy="146" rx="10" ry="14"/><circle cx="103" cy="141" r="3" fill="#fff0c2"/><circle cx="163" cy="141" r="3" fill="#fff0c2"/></g>
-<g id="eyeTriangle" fill="#42263c" style="display:none"><path d="M86 155L101 126L115 155Z"/><path d="M145 155L160 126L175 155Z"/></g>
-<g id="eyeStar" fill="#42263c" style="display:none"><path d="M100 128L105 139L117 140L108 148L111 160L100 154L89 160L92 148L83 140L95 139Z"/><path d="M160 128L165 139L177 140L168 148L171 160L160 154L149 160L152 148L143 140L155 139Z"/></g>
-<g id="eyeSleep" fill="none" stroke="#42263c" stroke-width="7" stroke-linecap="round" style="display:none"><path d="M84 145Q100 163 116 145"/><path d="M144 145Q160 163 176 145"/></g>
-<g id="mouthSmile"><path d="M88 177Q130 224 172 177Q164 222 130 222Q96 222 88 177Z" fill="#42263c"/></g>
-<g id="mouthSmall" style="display:none"><path d="M108 191Q130 210 152 191Q145 211 130 211Q115 211 108 191Z" fill="#42263c"/></g>
-<ellipse id="mouthRound" cx="130" cy="195" rx="13" ry="17" fill="#42263c" style="display:none"/>
-<g id="mouthTeeth" style="display:none"><path d="M92 180Q130 214 168 180L163 198L153 194L145 202L135 196L125 203L115 196L105 201L98 193Z" fill="#42263c"/><path d="M99 184Q130 205 161 184L157 193Q130 212 103 193Z" fill="#fff3d4"/></g>
-<g id="firefly">
-<circle id="aura" cx="184" cy="171" r="37" fill="url(#glow)"/>
-<g id="bug">
-<g id="wings"><ellipse cx="176" cy="161" rx="7" ry="12" transform="rotate(-32 176 161)" fill="#fff" stroke="#799d9a"/><ellipse cx="188" cy="160" rx="7" ry="12" transform="rotate(32 188 160)" fill="#fff" stroke="#799d9a"/></g>
-<path d="M180 164Q177 158 174 155M184 164Q190 158 192 155" fill="none" stroke="#493043" stroke-width="1.7"/>
-<ellipse cx="182" cy="170" rx="7" ry="10" fill="#3f3548"/>
-<ellipse cx="182" cy="178" rx="5.5" ry="7" fill="#f6d74c" stroke="#9b7926"/>
-<ellipse cx="182" cy="178" rx="3" ry="4.5" fill="#fffbd0"/>
-<circle cx="180" cy="168" r="1.6" fill="white"/>
-<path d="M177 177L172 183M187 177L191 183" fill="none" stroke="#493043" stroke-width="1.4"/>
-</g>
-<text x="184" y="205" text-anchor="middle" font-size="9" font-weight="800" fill="#704a22">luciole</text>
-</g>
-<g id="hat" style="display:none"><path d="M73 102L112 52L145 104Z" fill="#4b315e" stroke="#2e1c3c" stroke-width="2"/><path d="M63 104Q106 91 153 105Q109 117 63 104Z" fill="#4b315e" stroke="#2e1c3c" stroke-width="2"/><path d="M90 81L119 82L128 98L82 98Z" fill="#ff9d42"/></g>
-<g id="glasses" fill="none" stroke="#51324e" stroke-width="4" style="display:none"><circle cx="100" cy="147" r="17"/><circle cx="160" cy="147" r="17"/><path d="M117 147Q130 139 143 147"/></g>
-<g id="bow" style="display:none"><path d="M103 88Q79 63 80 91Q81 105 103 96Z" fill="#d95c83" stroke="#813454" stroke-width="2"/><path d="M105 88Q130 63 128 91Q127 105 105 96Z" fill="#f17ca0" stroke="#813454" stroke-width="2"/><circle cx="104" cy="93" r="7" fill="#ffd0db" stroke="#813454" stroke-width="2"/></g>
-</svg>
-</div>
-<p class="caption" id="pumpkinCaption">Ma citrouille magique ✨</p>
+  <div class="heading">
+    <div><h2>🦖 Le défi de Dino</h2><p>سطح خودت را انتخاب کن و به سؤال‌ها پاسخ بده.</p></div>
+    <span class="badge">+10 points</span>
+  </div>
+
+  <div class="levels">
+    <button class="level active" data-level="a1">⭐ A1</button>
+    <button class="level" data-level="a2">🚀 A2</button>
+  </div>
+
+  <div class="row">
+    <span id="counter">Question 1 / 6</span>
+    <span id="score">🏆 Score : 0</span>
+  </div>
+  <div class="track"><div class="fill" id="progress"></div></div>
+
+  <div id="quizBody">
+    <div class="question">
+      <div class="qlevel" id="qlevel">NIVEAU A1</div>
+      <div class="qtext" id="qtext"></div>
+      <p class="hint" id="hint"></p>
+      <button class="secondary" id="listenQ" type="button">🔊 شنیدن سؤال</button>
+    </div>
+    <div class="answers" id="answers"></div>
+    <p class="feedback" id="feedback" aria-live="polite"></p>
+    <div class="row">
+      <span class="score" id="streak">🔥 Série : 0</span>
+      <button class="primary" id="next" disabled>سؤال بعدی ←</button>
+    </div>
+  </div>
+
+  <div class="result hidden" id="result">
+    <div class="emoji" id="resultEmoji">🎉</div>
+    <h3 id="resultTitle">Bravo !</h3>
+    <p id="resultText"></p>
+    <button class="primary" id="restartQuiz">↻ شروع دوباره</button>
+  </div>
 </div>
 
-<div>
-<div class="group"><h3>👀 Les yeux</h3><span class="label">چشم‌ها</span><div class="options" id="eyesOptions">
-<button class="opt active" data-eye="Round">● Ronds</button><button class="opt" data-eye="Triangle">▲ Triangles</button><button class="opt" data-eye="Star">⭐ Étoiles</button><button class="opt" data-eye="Sleep">😴 Endormis</button>
-</div></div>
-<div class="group"><h3>😊 La bouche</h3><span class="label">دهان</span><div class="options" id="mouthOptions">
-<button class="opt active" data-mouth="Smile">Grand sourire</button><button class="opt" data-mouth="Small">Petit sourire</button><button class="opt" data-mouth="Round">Surprise</button><button class="opt" data-mouth="Teeth">Dents</button>
-</div></div>
-<div class="group"><h3>🎩 Un accessoire</h3><span class="label">وسایل تزئینی</span><div class="options" id="accessoryOptions">
-<button class="opt active" data-accessory="none">Sans</button><button class="opt" data-accessory="hat">🎩 Chapeau</button><button class="opt" data-accessory="glasses">👓 Lunettes</button><button class="opt" data-accessory="bow">🎀 Nœud</button>
-</div></div>
-<div class="group"><h3>✨ La luciole magique</h3>
-<button class="toggle" id="fireflyToggle" aria-pressed="true"><span id="fireflyText">✨ Luciole allumée</span><span class="switch"></span></button>
-<p class="note">Luciole = کرم شب‌تاب؛ حشره‌ای کوچک که نور تولید می‌کند.</p>
-</div>
-<button class="primary" id="resetPumpkin">↻ بازنشانی تزئینات</button>
-</div>
-</div>
-</div>
-
+<!-- PUMPKIN -->
 <div class="card">
-<div class="heading"><div><h2>🧠 Mémoire d’Halloween</h2><p>دو کارت را برگردان و جفت‌های درست را پیدا کن.</p></div><span class="badge">+20 par paire</span></div>
-<div class="memory-top">
-<div class="stats">
-<span class="stat" id="pairs">🧩 Paires : 0 / 6</span>
-<span class="stat" id="memScore">🏆 Score : 0</span>
-<span class="stat" id="moves">👆 Coups : 0</span>
+  <div class="heading">
+    <div><h2>🎃 Décore ta citrouille</h2><p>کدوتنبل خودت را طراحی کن و کرم شب‌تاب را روشن کن.</p></div>
+    <span class="badge">Atelier créatif</span>
+  </div>
+
+  <div class="pumpkin-layout">
+    <div>
+      <div class="stage">
+        <svg viewBox="0 0 260 300" role="img" aria-label="Citrouille décorée">
+          <defs>
+            <radialGradient id="orange" cx="35%" cy="25%" r="80%">
+              <stop stop-color="#ffcf70"/>
+              <stop offset=".5" stop-color="#ff9e36"/>
+              <stop offset="1" stop-color="#d85b17"/>
+            </radialGradient>
+            <linearGradient id="stem" x2="1" y2="1">
+              <stop stop-color="#9dbb69"/><stop offset="1" stop-color="#425d2e"/>
+            </linearGradient>
+            <radialGradient id="glow">
+              <stop stop-color="#fff9a8" stop-opacity=".95"/>
+              <stop offset=".4" stop-color="#ffe66b" stop-opacity=".48"/>
+              <stop offset="1" stop-color="#ffe66b" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="blur"><feGaussianBlur stdDeviation="2.5"/></filter>
+          </defs>
+          <ellipse cx="130" cy="267" rx="79" ry="10" fill="#68468b" opacity=".15"/>
+          <ellipse cx="130" cy="168" rx="82" ry="91" fill="url(#orange)"/>
+          <ellipse cx="93" cy="168" rx="43" ry="85" fill="#e66c20" opacity=".55"/>
+          <ellipse cx="166" cy="168" rx="43" ry="85" fill="#d85b19" opacity=".45"/>
+          <ellipse cx="130" cy="167" rx="32" ry="90" fill="#ffb54d" opacity=".65"/>
+          <path d="M130 79C122 115 122 213 130 253M92 92C71 128 72 200 94 235M168 92C190 128 188 200 166 235" fill="none" stroke="#bd5019" stroke-width="3" opacity=".45"/>
+          <path d="M117 89Q120 67 115 51Q130 42 144 52Q139 68 145 90Z" fill="url(#stem)" stroke="#486235" stroke-width="2"/>
+
+          <g id="eyeRound" fill="#42263c">
+            <ellipse cx="100" cy="146" rx="10" ry="14"/>
+            <ellipse cx="160" cy="146" rx="10" ry="14"/>
+            <circle cx="103" cy="141" r="3" fill="#fff0c2"/>
+            <circle cx="163" cy="141" r="3" fill="#fff0c2"/>
+          </g>
+          <g id="eyeTriangle" fill="#42263c" style="display:none">
+            <path d="M86 155L101 126L115 155Z"/>
+            <path d="M145 155L160 126L175 155Z"/>
+          </g>
+          <g id="eyeStar" fill="#42263c" style="display:none">
+            <path d="M100 128L105 139L117 140L108 148L111 160L100 154L89 160L92 148L83 140L95 139Z"/>
+            <path d="M160 128L165 139L177 140L168 148L171 160L160 154L149 160L152 148L143 140L155 139Z"/>
+          </g>
+          <g id="eyeSleep" fill="none" stroke="#42263c" stroke-width="7" stroke-linecap="round" style="display:none">
+            <path d="M84 145Q100 163 116 145"/>
+            <path d="M144 145Q160 163 176 145"/>
+          </g>
+
+          <g id="mouthSmile"><path d="M88 177Q130 224 172 177Q164 222 130 222Q96 222 88 177Z" fill="#42263c"/></g>
+          <g id="mouthSmall" style="display:none"><path d="M108 191Q130 210 152 191Q145 211 130 211Q115 211 108 191Z" fill="#42263c"/></g>
+          <ellipse id="mouthRound" cx="130" cy="195" rx="13" ry="17" fill="#42263c" style="display:none"/>
+          <g id="mouthTeeth" style="display:none">
+            <path d="M92 180Q130 214 168 180L163 198L153 194L145 202L135 196L125 203L115 196L105 201L98 193Z" fill="#42263c"/>
+            <path d="M99 184Q130 205 161 184L157 193Q130 212 103 193Z" fill="#fff3d4"/>
+          </g>
+
+          <g id="firefly">
+            <circle id="aura" cx="184" cy="171" r="37" fill="url(#glow)"/>
+            <g id="bug">
+              <g id="wings">
+                <ellipse cx="176" cy="161" rx="7" ry="12" transform="rotate(-32 176 161)" fill="#fff" stroke="#799d9a"/>
+                <ellipse cx="188" cy="160" rx="7" ry="12" transform="rotate(32 188 160)" fill="#fff" stroke="#799d9a"/>
+              </g>
+              <path d="M180 164Q177 158 174 155M184 164Q190 158 192 155" fill="none" stroke="#493043" stroke-width="1.7"/>
+              <ellipse cx="182" cy="170" rx="7" ry="10" fill="#3f3548"/>
+              <ellipse cx="182" cy="178" rx="5.5" ry="7" fill="#f6d74c" stroke="#9b7926"/>
+              <ellipse cx="182" cy="178" rx="3" ry="4.5" fill="#fffbd0"/>
+              <circle cx="180" cy="168" r="1.6" fill="white"/>
+              <path d="M177 177L172 183M187 177L191 183" fill="none" stroke="#493043" stroke-width="1.4"/>
+            </g>
+            <text x="184" y="205" text-anchor="middle" font-size="9" font-weight="800" fill="#704a22">luciole</text>
+          </g>
+
+          <g id="hat" style="display:none">
+            <path d="M73 102L112 52L145 104Z" fill="#4b315e" stroke="#2e1c3c" stroke-width="2"/>
+            <path d="M63 104Q106 91 153 105Q109 117 63 104Z" fill="#4b315e" stroke="#2e1c3c" stroke-width="2"/>
+            <path d="M90 81L119 82L128 98L82 98Z" fill="#ff9d42"/>
+          </g>
+          <g id="glasses" fill="none" stroke="#51324e" stroke-width="4" style="display:none">
+            <circle cx="100" cy="147" r="17"/><circle cx="160" cy="147" r="17"/>
+            <path d="M117 147Q130 139 143 147"/>
+          </g>
+          <g id="bow" style="display:none">
+            <path d="M103 88Q79 63 80 91Q81 105 103 96Z" fill="#d95c83" stroke="#813454" stroke-width="2"/>
+            <path d="M105 88Q130 63 128 91Q127 105 105 96Z" fill="#f17ca0" stroke="#813454" stroke-width="2"/>
+            <circle cx="104" cy="93" r="7" fill="#ffd0db" stroke="#813454" stroke-width="2"/>
+          </g>
+        </svg>
+      </div>
+      <p class="caption" id="pumpkinCaption">Ma citrouille magique ✨</p>
+    </div>
+
+    <div>
+      <div class="group">
+        <h3>👀 Les yeux</h3>
+        <span class="label">چشم‌ها</span>
+        <div class="options" id="eyesOptions">
+          <button class="opt active" data-eye="Round">● Ronds</button>
+          <button class="opt" data-eye="Triangle">▲ Triangles</button>
+          <button class="opt" data-eye="Star">⭐ Étoiles</button>
+          <button class="opt" data-eye="Sleep">😴 Endormis</button>
+        </div>
+      </div>
+      <div class="group">
+        <h3>😊 La bouche</h3>
+        <span class="label">دهان</span>
+        <div class="options" id="mouthOptions">
+          <button class="opt active" data-mouth="Smile">Grand sourire</button>
+          <button class="opt" data-mouth="Small">Petit sourire</button>
+          <button class="opt" data-mouth="Round">Surprise</button>
+          <button class="opt" data-mouth="Teeth">Dents</button>
+        </div>
+      </div>
+      <div class="group">
+        <h3>🎩 Un accessoire</h3>
+        <span class="label">وسایل تزئینی</span>
+        <div class="options" id="accessoryOptions">
+          <button class="opt active" data-accessory="none">Sans</button>
+          <button class="opt" data-accessory="hat">🎩 Chapeau</button>
+          <button class="opt" data-accessory="glasses">👓 Lunettes</button>
+          <button class="opt" data-accessory="bow">🎀 Nœud</button>
+        </div>
+      </div>
+      <div class="group">
+        <h3>✨ La luciole magique</h3>
+        <button class="toggle" id="fireflyToggle" aria-pressed="true">
+          <span id="fireflyText">✨ Luciole allumée</span>
+          <span class="switch"></span>
+        </button>
+        <p class="note">Luciole = کرم شب‌تاب؛ حشره‌ای کوچک که نور تولید می‌کند.</p>
+      </div>
+      <button class="primary" id="resetPumpkin">↻ بازنشانی تزئینات</button>
+    </div>
+  </div>
 </div>
-<button class="secondary" id="restartMemory">↻ شروع دوباره</button>
+
+<!-- MEMORY -->
+<div class="card">
+  <div class="heading">
+    <div><h2>🧠 Mémoire d’Halloween</h2><p>دو کارت را برگردان و جفت‌های درست را پیدا کن.</p></div>
+    <span class="badge">+20 par paire</span>
+  </div>
+  <div class="memory-top">
+    <div class="stats">
+      <span class="stat" id="pairs">🧩 Paires : 0 / 6</span>
+      <span class="stat" id="memScore">🏆 Score : 0</span>
+      <span class="stat" id="moves">👆 Coups : 0</span>
+    </div>
+    <button class="secondary" id="restartMemory">↻ شروع دوباره</button>
+  </div>
+  <div class="grid" id="memoryGrid"></div>
+  <p class="feedback" id="memFeedback" aria-live="polite">شش جفت را پیدا کن!</p>
+  <div id="vocabArea" class="hidden">
+    <h3>📚 واژگان پیدا شده</h3>
+    <div class="vocab-list" id="vocabFound"></div>
+  </div>
 </div>
-<div class="grid" id="memoryGrid"></div>
-<p class="feedback" id="memFeedback" aria-live="polite">شش جفت را پیدا کن!</p>
-<div id="vocabArea" class="hidden"><h3>📚 واژگان پیدا شده</h3><div class="vocab-list" id="vocabFound"></div></div>
-</div>
+
 </section>
 
 <footer><strong>YOSRA</strong> · Apprendre le français avec imagination</footer>
@@ -296,369 +484,377 @@ footer{text-align:center;padding:18px 0 0;color:var(--muted);font-size:.8rem;lin
 
 /* Navigation */
 document.querySelectorAll(".tab").forEach(btn=>{
-btn.addEventListener("click",()=>{
-document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b===btn));
-document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("active",p.id===btn.dataset.panel));
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b===btn));
+    document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("active",p.id===btn.dataset.panel));
+  });
 });
-});
+
+/* Speech */
+function speakFrench(text){
+  if(!("speechSynthesis" in window)){
+    showToast("پخش صوت در این مرورگر پشتیبانی نمی‌شود.");
+    return;
+  }
+  window.speechSynthesis.cancel();
+  const utterance=new SpeechSynthesisUtterance(text);
+  utterance.lang="fr-FR";
+  utterance.rate=.86;
+  utterance.pitch=1.03;
+  const voice=window.speechSynthesis.getVoices().find(v=>v.lang&&v.lang.toLowerCase().startsWith("fr"));
+  if(voice)utterance.voice=voice;
+  window.speechSynthesis.speak(utterance);
+}
 
 /* Helpers */
 const $=id=>document.getElementById(id);
 let toastTimer;
 function showToast(text){
-const el=$("toast");
-el.textContent=text;
-el.classList.remove("hidden");
-clearTimeout(toastTimer);
-toastTimer=setTimeout(()=>el.classList.add("hidden"),4000);
-}
-
-/* =====================================================
-   YOSRA FRENCH SPEECH ENGINE
-   French voice only — no English fallback
-===================================================== */
-
-let speechRequestId=0;
-
-function getBestFrenchVoice(){
-if(!("speechSynthesis" in window))return null;
-
-const voices=window.speechSynthesis.getVoices()||[];
-const french=voices.filter(v=>
-v.lang && v.lang.toLowerCase().startsWith("fr")
-);
-
-if(!french.length)return null;
-
-/* اولویت با صدای فرانسوی فرانسه */
-return french.find(v=>v.lang.toLowerCase()==="fr-fr")
-|| french.find(v=>v.lang.toLowerCase().startsWith("fr-fr"))
-|| french.find(v=>v.localService===true)
-|| french[0];
-}
-
-function waitForFrenchVoice(maxWait=5000){
-return new Promise(resolve=>{
-const synth=window.speechSynthesis;
-let finished=false;
-let timer=null;
-
-function finish(voice){
-if(finished)return;
-finished=true;
-clearTimeout(timer);
-if(synth.removeEventListener){
-synth.removeEventListener("voiceschanged",checkVoices);
-}
-resolve(voice||null);
-}
-
-function checkVoices(){
-const voice=getBestFrenchVoice();
-if(voice)finish(voice);
-}
-
-checkVoices();
-if(finished)return;
-
-if(synth.addEventListener){
-synth.addEventListener("voiceschanged",checkVoices);
-}else{
-synth.onvoiceschanged=checkVoices;
-}
-
-timer=setTimeout(()=>{
-/* آخرین بررسی پس از پایان مهلت */
-finish(getBestFrenchVoice());
-},maxWait);
-});
-}
-
-async function speakFrench(text){
-if(!("speechSynthesis" in window) ||
-typeof SpeechSynthesisUtterance==="undefined"){
-showToast("مرورگر شما از پخش گفتار پشتیبانی نمی‌کند. لطفاً Chrome را امتحان کنید.");
-return;
-}
-
-const synth=window.speechSynthesis;
-const request=++speechRequestId;
-
-/* قطع صدای قبلی */
-synth.cancel();
-
-const voice=await waitForFrenchVoice(5000);
-
-/* جلوگیری از اجرای درخواست قدیمی */
-if(request!==speechRequestId)return;
-
-if(!voice){
-showToast("صدای فرانسوی روی دستگاه پیدا نشد. لطفاً در تنظیمات تبدیل متن به گفتار، صدای French (France) را نصب کنید.");
-return;
-}
-
-const utterance=new SpeechSynthesisUtterance(String(text));
-
-/* تنظیم زبان براساس صدای واقعی فرانسوی */
-utterance.voice=voice;
-utterance.lang=voice.lang || "fr-FR";
-utterance.rate=.86;
-utterance.pitch=1.03;
-utterance.volume=1;
-
-utterance.onerror=(event)=>{
-if(event.error!=="canceled" && event.error!=="interrupted"){
-showToast("پخش فرانسوی با خطا مواجه شد. دوباره امتحان کنید.");
-}
-};
-
-try{
-synth.resume();
-synth.speak(utterance);
-}catch(error){
-showToast("پخش صوت ممکن نشد. صفحه را دوباره باز کنید.");
-}
+  const el=$("toast");
+  el.textContent=text;
+  el.classList.remove("hidden");
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>el.classList.add("hidden"),2400);
 }
 
 /* Celebration */
 function celebrate(){
-const holder=$("celebration");
-const icons=["🍬","🍭","🍂","🍁","🍬","🍃","✨"];
-for(let i=0;i<36;i++){
-const el=document.createElement("span");
-el.className="falling";
-el.textContent=icons[Math.floor(Math.random()*icons.length)];
-el.style.left=(Math.random()*100)+"%";
-el.style.animationDelay=(Math.random()*.55)+"s";
-el.style.animationDuration=(1.7+Math.random()*1.1)+"s";
-holder.appendChild(el);
-setTimeout(()=>el.remove(),3200);
+  const holder=$("celebration");
+  const icons=["🍬","🍭","🍂","🍁","🍬","🍃","✨"];
+  for(let i=0;i<36;i++){
+    const el=document.createElement("span");
+    el.className="falling";
+    el.textContent=icons[Math.floor(Math.random()*icons.length)];
+    el.style.left=(Math.random()*100)+"%";
+    el.style.animationDelay=(Math.random()*.55)+"s";
+    el.style.animationDuration=(1.7+Math.random()*1.1)+"s";
+    holder.appendChild(el);
+    setTimeout(()=>el.remove(),3200);
+  }
+  playMelody();
 }
-playMelody();
-}
-
 function playMelody(){
-const AC=window.AudioContext||window.webkitAudioContext;
-if(!AC)return;
-let ctx;
-try{
-ctx=new AC();
-const notes=[523.25,659.25,783.99,1046.5];
-notes.forEach((freq,i)=>{
-const osc=ctx.createOscillator();
-const gain=ctx.createGain();
-const start=ctx.currentTime+i*.13;
-osc.type="sine";
-osc.frequency.value=freq;
-gain.gain.setValueAtTime(.0001,start);
-gain.gain.exponentialRampToValueAtTime(.12,start+.025);
-gain.gain.exponentialRampToValueAtTime(.0001,start+.2);
-osc.connect(gain);
-gain.connect(ctx.destination);
-osc.start(start);
-osc.stop(start+.22);
-});
-setTimeout(()=>ctx.close().catch(()=>{}),1200);
-}catch(e){if(ctx)ctx.close().catch(()=>{});}
+  const AC=window.AudioContext||window.webkitAudioContext;
+  if(!AC)return;
+  let ctx;
+  try{
+    ctx=new AC();
+    const notes=[523.25,659.25,783.99,1046.5];
+    notes.forEach((freq,i)=>{
+      const osc=ctx.createOscillator();
+      const gain=ctx.createGain();
+      const start=ctx.currentTime+i*.13;
+      osc.type="sine";
+      osc.frequency.value=freq;
+      gain.gain.setValueAtTime(.0001,start);
+      gain.gain.exponentialRampToValueAtTime(.12,start+.025);
+      gain.gain.exponentialRampToValueAtTime(.0001,start+.2);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(start);
+      osc.stop(start+.22);
+    });
+    setTimeout(()=>ctx.close().catch(()=>{}),1200);
+  }catch(e){
+    if(ctx)ctx.close().catch(()=>{});
+  }
 }
 
-/* Story */
+/* Story: French original + Persian translation */
 const story=[
-{title:"1. Halloween et la citrouille",fr:"C’est Halloween ! Dino sort du magasin, tout content. Il porte une énorme citrouille, plus grande que lui !",fa:"هالووین است! داینو با خوشحالی از فروشگاه بیرون می‌آید. او یک کدوتنبل بسیار بزرگ در دست دارد؛ کدوتنبلی که از خودش هم بزرگ‌تر است!"},
-{title:"2. La préparation",fr:"Il rentre chez lui et pose la citrouille sur la table. Il la vide, puis il lui fait deux grands yeux et un joli sourire. Mais il manque quelque chose !",fa:"او به خانه برمی‌گردد و کدوتنبل را روی میز می‌گذارد. داخل آن را خالی می‌کند، سپس دو چشم بزرگ و یک لبخند زیبا برایش درست می‌کند. اما یک چیز کم است!"},
-{title:"3. La luciole magique",fr:"Dino réfléchit un peu… Ah ! Une petite luciole ! Il met la luciole dans la citrouille. Et soudain, les yeux et le sourire de la citrouille s’illuminent ! « Tu es parfaite ! » dit Dino.",fa:"داینو کمی فکر می‌کند... آهان! یک کرم شب‌تاب کوچک! او کرم شب‌تاب را داخل کدوتنبل می‌گذارد. ناگهان چشم‌ها و لبخند کدوتنبل روشن می‌شوند! داینو می‌گوید: «تو بی‌نقصی!»"},
-{title:"4. Minuit",fr:"Il pose la citrouille près de la fenêtre, puis il va se coucher. Minuit sonne… Tic… tac… tic… tac… Soudain, la citrouille commence à bouger. Deux petites jambes apparaissent sous la citrouille ! Elle saute doucement de la table.",fa:"او کدوتنبل را کنار پنجره می‌گذارد و سپس به رختخواب می‌رود. نیمه‌شب فرا می‌رسد... تیک... تاک... تیک... تاک... ناگهان کدوتنبل شروع به حرکت می‌کند. دو پای کوچک زیر آن ظاهر می‌شوند! کدوتنبل به‌آرامی از روی میز پایین می‌پرد."},
-{title:"5. La fuite",fr:"Boup ! Dino bouge dans son lit. La citrouille s’arrête et ne bouge plus. Dino se remet à ronfler. Alors, la citrouille marche sur la pointe des pieds jusqu’à la porte et s’enfuit ! Mais la porte se ferme avec un grand bruit ! CLAC !",fa:"بومپ! داینو در تختش تکان می‌خورد. کدوتنبل می‌ایستد و دیگر حرکت نمی‌کند. داینو دوباره شروع به خروپف می‌کند. پس کدوتنبل روی پنجه‌های پایش تا در حرکت می‌کند و فرار می‌کند! اما در با صدای بلندی بسته می‌شود! تق!"},
-{title:"6. Dino se réveille",fr:"Dino se réveille et se frotte les yeux. Sa citrouille a disparu ! « Ma citrouille ?! » Il regarde par la fenêtre et voit sa citrouille lumineuse courir dans la rue !",fa:"داینو بیدار می‌شود و چشم‌هایش را می‌مالد. کدوتنبلش ناپدید شده است! «کدوتنبل من؟!» او از پنجره نگاه می‌کند و کدوتنبل نورانی‌اش را می‌بیند که در خیابان می‌دود!"},
-{title:"7. La poursuite",fr:"Dino sort vite de la maison, en pantoufles et avec son bonnet de nuit ! La citrouille tourne dans une petite rue. Dino court derrière elle… Elle se cache sous un banc. Dino tombe la tête la première dans un buisson !",fa:"داینو با عجله از خانه بیرون می‌رود؛ در حالی که دمپایی و کلاه خوابش را پوشیده است! کدوتنبل وارد یک کوچه کوچک می‌شود. داینو به دنبالش می‌دود... کدوتنبل زیر یک نیمکت پنهان می‌شود. داینو با سر داخل یک بوته می‌افتد!"},
-{title:"8. Dans la forêt",fr:"La citrouille repart et entre dans une petite forêt. Dino entre aussi dans la forêt, mais la citrouille a disparu ! Il ne reste que quelques graines de citrouille sur le sol…",fa:"کدوتنبل دوباره راه می‌افتد و وارد جنگل کوچکی می‌شود. داینو هم وارد جنگل می‌شود، اما کدوتنبل ناپدید شده است! فقط چند دانه کدوتنبل روی زمین باقی مانده‌اند..."},
-{title:"9. Le jardin mystérieux",fr:"Dino suit les graines et arrive dans un jardin sombre. Il entend des rires… Enfin, il retrouve sa citrouille au milieu du jardin. Mais elle n’est pas seule ! Trois petites citrouilles sont avec elle.",fa:"داینو دانه‌ها را دنبال می‌کند و به باغی تاریک می‌رسد. صدای خنده می‌شنود... سرانجام کدوتنبلش را در وسط باغ پیدا می‌کند. اما کدوتنبل تنها نیست! سه کدوتنبل کوچک هم کنار او هستند."},
-{title:"10. Les nouveaux amis",fr:"L’une porte un chapeau de sorcière, une autre a des lunettes rondes et la troisième est toute petite. Les citrouilles se font des câlins. Dino sourit et dit doucement : « Oh… tes amis ! »",fa:"یکی از آن‌ها کلاه جادوگری به سر دارد، دیگری عینک گرد زده و سومی خیلی کوچک است. کدوتنبل‌ها همدیگر را در آغوش می‌گیرند. داینو لبخند می‌زند و آرام می‌گوید: «آه... دوستانت!»"},
-{title:"11. La vérité",fr:"Il comprend enfin : sa citrouille voulait retrouver ses amis ! Dino réfléchit un instant… Puis il sourit et invite toutes les citrouilles chez lui.",fa:"او سرانجام متوجه می‌شود: کدوتنبلش می‌خواسته دوستانش را دوباره پیدا کند! داینو لحظه‌ای فکر می‌کند... سپس لبخند می‌زند و همه کدوتنبل‌ها را به خانه‌اش دعوت می‌کند."},
-{title:"12. La fête d’Halloween",fr:"Il décore la maison avec des lumières orange, apporte des bonbons et met de la musique. Les citrouilles commencent à danser ! Dino danse avec elles, mais avec sa grande queue, il fait rouler toutes les citrouilles comme des boules de bowling ! Tout le monde éclate de rire.",fa:"او خانه را با چراغ‌های نارنجی تزئین می‌کند، آبنبات می‌آورد و موسیقی پخش می‌کند. کدوتنبل‌ها شروع به رقصیدن می‌کنند! داینو هم با آن‌ها می‌رقصد، اما با دم بزرگش همه کدوتنبل‌ها را مثل توپ‌های بولینگ به حرکت درمی‌آورد! همه از خنده منفجر می‌شوند."},
-{title:"13. Joyeux Halloween !",fr:"« Joyeux Halloween ! » dit Dino. Dino et les quatre citrouilles font la fête dans la maison. Derrière eux, sous la pleine lune, une longue file de citrouilles lumineuses entre par la fenêtre, une par une ! FIN 🧡",fa:"داینو می‌گوید: «هالووین مبارک!» داینو و چهار کدوتنبل در خانه جشن می‌گیرند. پشت سر آن‌ها، زیر نور ماه کامل، صف بلندی از کدوتنبل‌های نورانی یکی پس از دیگری از پنجره وارد خانه می‌شوند! پایان 🧡"}
+{
+title:"1. Halloween et la citrouille",
+fr:"C’est Halloween ! Dino sort du magasin, tout content. Il porte une énorme citrouille, plus grande que lui !",
+fa:"هالووین است! داینو با خوشحالی از فروشگاه بیرون می‌آید. او یک کدوتنبل بسیار بزرگ در دست دارد؛ کدوتنبلی که از خودش هم بزرگ‌تر است!"
+},
+{
+title:"2. La préparation",
+fr:"Il rentre chez lui et pose la citrouille sur la table. Il la vide, puis il lui fait deux grands yeux et un joli sourire. Mais il manque quelque chose !",
+fa:"او به خانه برمی‌گردد و کدوتنبل را روی میز می‌گذارد. داخل آن را خالی می‌کند، سپس دو چشم بزرگ و یک لبخند زیبا برایش درست می‌کند. اما یک چیز کم است!"
+},
+{
+title:"3. La luciole magique",
+fr:"Dino réfléchit un peu… Ah ! Une petite luciole ! Il met la luciole dans la citrouille. Et soudain, les yeux et le sourire de la citrouille s’illuminent ! « Tu es parfaite ! » dit Dino.",
+fa:"داینو کمی فکر می‌کند... آهان! یک کرم شب‌تاب کوچک! او کرم شب‌تاب را داخل کدوتنبل می‌گذارد. ناگهان چشم‌ها و لبخند کدوتنبل روشن می‌شوند! داینو می‌گوید: «تو بی‌نقصی!»"
+},
+{
+title:"4. Minuit",
+fr:"Il pose la citrouille près de la fenêtre, puis il va se coucher. Minuit sonne… Tic… tac… tic… tac… Soudain, la citrouille commence à bouger. Deux petites jambes apparaissent sous la citrouille ! Elle saute doucement de la table.",
+fa:"او کدوتنبل را کنار پنجره می‌گذارد و سپس به رختخواب می‌رود. نیمه‌شب فرا می‌رسد... تیک... تاک... تیک... تاک... ناگهان کدوتنبل شروع به حرکت می‌کند. دو پای کوچک زیر آن ظاهر می‌شوند! کدوتنبل به‌آرامی از روی میز پایین می‌پرد."
+},
+{
+title:"5. La fuite",
+fr:"Boup ! Dino bouge dans son lit. La citrouille s’arrête et ne bouge plus. Dino se remet à ronfler. Alors, la citrouille marche sur la pointe des pieds jusqu’à la porte et s’enfuit ! Mais la porte se ferme avec un grand bruit ! CLAC !",
+fa:"بومپ! داینو در تختش تکان می‌خورد. کدوتنبل می‌ایستد و دیگر حرکت نمی‌کند. داینو دوباره شروع به خروپف می‌کند. پس کدوتنبل روی پنجه‌های پایش تا در حرکت می‌کند و فرار می‌کند! اما در با صدای بلندی بسته می‌شود! تق!"
+},
+{
+title:"6. Dino se réveille",
+fr:"Dino se réveille et se frotte les yeux. Sa citrouille a disparu ! « Ma citrouille ?! » Il regarde par la fenêtre et voit sa citrouille lumineuse courir dans la rue !",
+fa:"داینو بیدار می‌شود و چشم‌هایش را می‌مالد. کدوتنبلش ناپدید شده است! «کدوتنبل من؟!» او از پنجره نگاه می‌کند و کدوتنبل نورانی‌اش را می‌بیند که در خیابان می‌دود!"
+},
+{
+title:"7. La poursuite",
+fr:"Dino sort vite de la maison, en pantoufles et avec son bonnet de nuit ! La citrouille tourne dans une petite rue. Dino court derrière elle… Elle se cache sous un banc. Dino tombe la tête la première dans un buisson !",
+fa:"داینو با عجله از خانه بیرون می‌رود؛ در حالی که دمپایی و کلاه خوابش را پوشیده است! کدوتنبل وارد یک کوچه کوچک می‌شود. داینو به دنبالش می‌دود... کدوتنبل زیر یک نیمکت پنهان می‌شود. داینو با سر داخل یک بوته می‌افتد!"
+},
+{
+title:"8. Dans la forêt",
+fr:"La citrouille repart et entre dans une petite forêt. Dino entre aussi dans la forêt, mais la citrouille a disparu ! Il ne reste que quelques graines de citrouille sur le sol…",
+fa:"کدوتنبل دوباره راه می‌افتد و وارد جنگل کوچکی می‌شود. داینو هم وارد جنگل می‌شود، اما کدوتنبل ناپدید شده است! فقط چند دانه کدوتنبل روی زمین باقی مانده‌اند..."
+},
+{
+title:"9. Le jardin mystérieux",
+fr:"Dino suit les graines et arrive dans un jardin sombre. Il entend des rires… Enfin, il retrouve sa citrouille au milieu du jardin. Mais elle n’est pas seule ! Trois petites citrouilles sont avec elle.",
+fa:"داینو دانه‌ها را دنبال می‌کند و به باغی تاریک می‌رسد. صدای خنده می‌شنود... سرانجام کدوتنبلش را در وسط باغ پیدا می‌کند. اما کدوتنبل تنها نیست! سه کدوتنبل کوچک هم کنار او هستند."
+},
+{
+title:"10. Les nouveaux amis",
+fr:"L’une porte un chapeau de sorcière, une autre a des lunettes rondes et la troisième est toute petite. Les citrouilles se font des câlins. Dino sourit et dit doucement : « Oh… tes amis ! »",
+fa:"یکی از آن‌ها کلاه جادوگری به سر دارد، دیگری عینک گرد زده و سومی خیلی کوچک است. کدوتنبل‌ها همدیگر را در آغوش می‌گیرند. داینو لبخند می‌زند و آرام می‌گوید: «آه... دوستانت!»"
+},
+{
+title:"11. La vérité",
+fr:"Il comprend enfin : sa citrouille voulait retrouver ses amis ! Dino réfléchit un instant… Puis il sourit et invite toutes les citrouilles chez lui.",
+fa:"او سرانجام متوجه می‌شود: کدوتنبلش می‌خواسته دوستانش را دوباره پیدا کند! داینو لحظه‌ای فکر می‌کند... سپس لبخند می‌زند و همه کدوتنبل‌ها را به خانه‌اش دعوت می‌کند."
+},
+{
+title:"12. La fête d’Halloween",
+fr:"Il décore la maison avec des lumières orange, apporte des bonbons et met de la musique. Les citrouilles commencent à danser ! Dino danse avec elles, mais avec sa grande queue, il fait rouler toutes les citrouilles comme des boules de bowling ! Tout le monde éclate de rire.",
+fa:"او خانه را با چراغ‌های نارنجی تزئین می‌کند، آبنبات می‌آورد و موسیقی پخش می‌کند. کدوتنبل‌ها شروع به رقصیدن می‌کنند! داینو هم با آن‌ها می‌رقصد، اما با دم بزرگش همه کدوتنبل‌ها را مثل توپ‌های بولینگ به حرکت درمی‌آورد! همه از خنده منفجر می‌شوند."
+},
+{
+title:"13. Joyeux Halloween !",
+fr:"« Joyeux Halloween ! » dit Dino. Dino et les quatre citrouilles font la fête dans la maison. Derrière eux, sous la pleine lune, une longue file de citrouilles lumineuses entre par la fenêtre, une par une ! FIN 🧡",
+fa:"داینو می‌گوید: «هالووین مبارک!» داینو و چهار کدوتنبل در خانه جشن می‌گیرند. پشت سر آن‌ها، زیر نور ماه کامل، صف بلندی از کدوتنبل‌های نورانی یکی پس از دیگری از پنجره وارد خانه می‌شوند! پایان 🧡"
+}
 ];
 
 function renderStory(){
-const holder=$("storyContent");
-story.forEach(part=>{
-const box=document.createElement("article");
-box.className="story-section";
-const title=document.createElement("h3");
-title.textContent=part.title;
-const fr=document.createElement("p");
-fr.className="fr-text";
-fr.textContent=part.fr;
-const fa=document.createElement("p");
-fa.className="fa-text";
-fa.textContent=part.fa;
-const tools=document.createElement("div");
-tools.className="story-tools";
-const listen=document.createElement("button");
-listen.className="secondary";
-listen.type="button";
-listen.textContent="🔊 شنیدن فرانسوی";
-listen.addEventListener("click",()=>speakFrench(part.fr));
-const copy=document.createElement("button");
-copy.className="secondary";
-copy.type="button";
-copy.textContent="🇫🇷 فقط متن فرانسوی";
-copy.addEventListener("click",()=>{
-showToast("برای شنیدن متن فرانسوی، دکمه پخش را بزن.");
-speakFrench(part.fr);
-});
-tools.append(listen,copy);
-box.append(title,fr,fa,tools);
-holder.appendChild(box);
-});
+  const holder=$("storyContent");
+  story.forEach((part,i)=>{
+    const box=document.createElement("article");
+    box.className="story-section";
+
+    const title=document.createElement("h3");
+    title.textContent=part.title;
+
+    const fr=document.createElement("p");
+    fr.className="fr-text";
+    fr.textContent=part.fr;
+
+    const fa=document.createElement("p");
+    fa.className="fa-text";
+    fa.textContent=part.fa;
+
+    const tools=document.createElement("div");
+    tools.className="story-tools";
+
+    const listen=document.createElement("button");
+    listen.className="secondary";
+    listen.type="button";
+    listen.textContent="🔊 شنیدن فرانسوی";
+    listen.addEventListener("click",()=>speakFrench(part.fr));
+
+    const copy=document.createElement("button");
+    copy.className="secondary";
+    copy.type="button";
+    copy.textContent="🇫🇷 فقط متن فرانسوی";
+    copy.addEventListener("click",()=>{
+      showToast("برای شنیدن، دکمه پخش را بزن.");
+      speakFrench(part.fr);
+    });
+
+    tools.append(listen,copy);
+    box.append(title,fr,fa,tools);
+    holder.appendChild(box);
+  });
 }
 
 /* Vocabulary */
 const vocab=[
-{id:"pumpkin",emoji:"🎃",fr:"Une citrouille",fa:"کدوتنبل"},
-{id:"ghost",emoji:"👻",fr:"Un fantôme",fa:"روح"},
-{id:"bat",emoji:"🦇",fr:"Une chauve-souris",fa:"خفاش"},
-{id:"spider",emoji:"🕷️",fr:"Une araignée",fa:"عنکبوت"},
-{id:"candy",emoji:"🍬",fr:"Un bonbon",fa:"آبنبات"},
-{id:"witch",emoji:"🧙",fr:"Une sorcière",fa:"جادوگر"},
-{id:"firefly",emoji:"✨",fr:"Une luciole",fa:"کرم شب‌تاب"},
-{id:"shop",emoji:"🏪",fr:"Un magasin",fa:"فروشگاه"},
-{id:"window",emoji:"🪟",fr:"Une fenêtre",fa:"پنجره"},
-{id:"table",emoji:"🪑",fr:"Une table",fa:"میز"},
-{id:"forest",emoji:"🌲",fr:"Une forêt",fa:"جنگل"},
-{id:"garden",emoji:"🌳",fr:"Un jardin",fa:"باغ"},
-{id:"seed",emoji:"🌱",fr:"Une graine",fa:"دانه"},
-{id:"bench",emoji:"🪑",fr:"Un banc",fa:"نیمکت"},
-{id:"slippers",emoji:"🥿",fr:"Des pantoufles",fa:"دمپایی"},
-{id:"hat",emoji:"🎩",fr:"Un chapeau",fa:"کلاه"},
-{id:"glasses",emoji:"👓",fr:"Des lunettes",fa:"عینک"},
-{id:"smile",emoji:"😊",fr:"Un sourire",fa:"لبخند"},
-{id:"laugh",emoji:"😂",fr:"Un rire",fa:"خنده"},
-{id:"friend",emoji:"🧡",fr:"Un ami / une amie",fa:"دوست"}
+ {id:"pumpkin",emoji:"🎃",fr:"Une citrouille",fa:"کدوتنبل"},
+ {id:"ghost",emoji:"👻",fr:"Un fantôme",fa:"روح"},
+ {id:"bat",emoji:"🦇",fr:"Une chauve-souris",fa:"خفاش"},
+ {id:"spider",emoji:"🕷️",fr:"Une araignée",fa:"عنکبوت"},
+ {id:"candy",emoji:"🍬",fr:"Un bonbon",fa:"آبنبات"},
+ {id:"witch",emoji:"🧙",fr:"Une sorcière",fa:"جادوگر"},
+ {id:"firefly",emoji:"✨",fr:"Une luciole",fa:"کرم شب‌تاب"},
+ {id:"shop",emoji:"🏪",fr:"Un magasin",fa:"فروشگاه"},
+ {id:"window",emoji:"🪟",fr:"Une fenêtre",fa:"پنجره"},
+ {id:"table",emoji:"🪑",fr:"Une table",fa:"میز"},
+ {id:"forest",emoji:"🌲",fr:"Une forêt",fa:"جنگل"},
+ {id:"garden",emoji:"🌳",fr:"Un jardin",fa:"باغ"},
+ {id:"seed",emoji:"🌱",fr:"Une graine",fa:"دانه"},
+ {id:"bench",emoji:"🪑",fr:"Un banc",fa:"نیمکت"},
+ {id:"slippers",emoji:"🥿",fr:"Des pantoufles",fa:"دمپایی"},
+ {id:"hat",emoji:"🎩",fr:"Un chapeau",fa:"کلاه"},
+ {id:"glasses",emoji:"👓",fr:"Des lunettes",fa:"عینک"},
+ {id:"smile",emoji:"😊",fr:"Un sourire",fa:"لبخند"},
+ {id:"laugh",emoji:"😂",fr:"Un rire",fa:"خنده"},
+ {id:"friend",emoji:"🧡",fr:"Un ami / une amie",fa:"دوست"}
 ];
 
 function createVocabCard(item){
-const row=document.createElement("div");
-row.className="vocab";
-const emoji=document.createElement("span");
-emoji.className="ve";emoji.textContent=item.emoji;
-const words=document.createElement("div");
-words.className="words";
-const strong=document.createElement("strong");
-strong.textContent=item.fr;
-const small=document.createElement("small");
-small.textContent=item.fa;
-words.append(strong,small);
-const listen=document.createElement("button");
-listen.className="listen";listen.type="button";listen.textContent="🔊";
-listen.setAttribute("aria-label","Écouter "+item.fr);
-listen.addEventListener("click",()=>speakFrench(item.fr));
-row.append(emoji,words,listen);
-return row;
+  const row=document.createElement("div");
+  row.className="vocab";
+
+  const emoji=document.createElement("span");
+  emoji.className="ve";
+  emoji.textContent=item.emoji;
+
+  const words=document.createElement("div");
+  words.className="words";
+
+  const strong=document.createElement("strong");
+  strong.textContent=item.fr;
+
+  const small=document.createElement("small");
+  small.textContent=item.fa;
+
+  words.append(strong,small);
+
+  const listen=document.createElement("button");
+  listen.className="listen";
+  listen.type="button";
+  listen.textContent="🔊";
+  listen.setAttribute("aria-label","Écouter "+item.fr);
+  listen.addEventListener("click",()=>speakFrench(item.fr));
+
+  row.append(emoji,words,listen);
+  return row;
 }
 
 function renderVocabulary(){
-const holder=$("mainVocab");
-vocab.forEach(item=>holder.appendChild(createVocabCard(item)));
+  const holder=$("mainVocab");
+  vocab.forEach(item=>holder.appendChild(createVocabCard(item)));
 }
 
 /* Quiz */
 const questions={
-a1:[
-{q:"Que signifie « une luciole » ?",hint:"معنی luciole چیست؟",o:["Un insecte qui brille","Un animal qui dort","Un fruit orange","Un vêtement"],a:0,why:"Une luciole est un petit insecte qui produit de la lumière."},
-{q:"Comment dit-on « کدو تنبل » en français ?",hint:"معادل فرانسوی کدو تنبل را انتخاب کن.",o:["Un fantôme","Une citrouille","Un bonbon","Une araignée"],a:1,why:"Une citrouille = کدو تنبل."},
-{q:"Que signifie « un fantôme » ?",hint:"معنی این واژه چیست؟",o:["جادوگر","خفاش","روح","آبنبات"],a:2,why:"Un fantôme = روح."},
-{q:"Complète : La sorcière porte ___ chapeau.",hint:"حرف تعریف درست را انتخاب کن.",o:["une","des","un","de"],a:2,why:"On dit : un chapeau."},
-{q:"Quel animal vole la nuit ?",hint:"کدام حیوان شب پرواز می‌کند؟",o:["Une chauve-souris","Une citrouille","Un bonbon","Un chapeau"],a:0,why:"Une chauve-souris = خفاش."},
-{q:"Choisis la phrase correcte.",hint:"به جنسیت اسم و صفت توجه کن.",o:["Une petit citrouille","Un petite citrouille","Une petite citrouille","Une petits citrouille"],a:2,why:"Citrouille est féminin : une petite citrouille."}
-],
-a2:[
-{q:"Où est la luciole ?",hint:"کرم شب‌تاب کجاست؟",o:["Sur la table","Dans la citrouille","Sous le chapeau","Devant la porte"],a:1,why:"Dans signifie داخلِ."},
-{q:"Hier, Dino ___ sa citrouille.",hint:"گذشتهٔ مرکب (passé composé) را انتخاب کن.",o:["décore","a décoré","décorera","décorait demain"],a:1,why:"Hier + passé composé : a décoré."},
-{q:"Quel est le pluriel de « un bonbon » ?",hint:"شکل جمع را انتخاب کن.",o:["des bonbon","des bonbons","des bonbone","des bonbonnes"],a:1,why:"Au pluriel, on écrit : des bonbons."},
-{q:"Les enfants regardent les fantômes. Ils ___ regardent.",hint:"ضمیر مفعولی مستقیم جمع را انتخاب کن.",o:["lui","leur","les","la"],a:2,why:"Les remplace un complément d’objet direct pluriel."},
-{q:"Quel connecteur exprime une opposition ?",hint:"کدام کلمه معنی «اما» می‌دهد؟",o:["Parce que","Mais","Puis","Donc"],a:1,why:"Mais exprime une opposition."},
-{q:"La citrouille et ses amis ___ dansent.",hint:"فعل مناسب برای فاعل جمع را انتخاب کن.",o:["est","sont","a","fait"],a:1,why:"La citrouille et ses amis sont plusieurs."}
-]
+ a1:[
+  {q:"Que signifie « une luciole » ?",hint:"معنی luciole چیست؟",o:["Un insecte qui brille","Un animal qui dort","Un fruit orange","Un vêtement"],a:0,why:"Une luciole est un petit insecte qui produit de la lumière."},
+  {q:"Comment dit-on « کدو تنبل » en français ?",hint:"معادل فرانسوی کدو تنبل را انتخاب کن.",o:["Un fantôme","Une citrouille","Un bonbon","Une araignée"],a:1,why:"Une citrouille = کدو تنبل."},
+  {q:"Que signifie « un fantôme » ?",hint:"معنی این واژه چیست؟",o:["جادوگر","خفاش","روح","آبنبات"],a:2,why:"Un fantôme = روح."},
+  {q:"Complète : La sorcière porte ___ chapeau.",hint:"حرف تعریف درست را انتخاب کن.",o:["une","des","un","de"],a:2,why:"On dit : un chapeau."},
+  {q:"Quel animal vole la nuit ?",hint:"کدام حیوان شب پرواز می‌کند؟",o:["Une chauve-souris","Une citrouille","Un bonbon","Un chapeau"],a:0,why:"Une chauve-souris = خفاش."},
+  {q:"Choisis la phrase correcte.",hint:"به جنسیت اسم و صفت توجه کن.",o:["Une petit citrouille","Un petite citrouille","Une petite citrouille","Une petits citrouille"],a:2,why:"Citrouille est féminin : une petite citrouille."}
+ ],
+ a2:[
+  {q:"Où est la luciole ?",hint:"کرم شب‌تاب کجاست؟",o:["Sur la table","Dans la citrouille","Sous le chapeau","Devant la porte"],a:1,why:"Dans signifie داخلِ."},
+  {q:"Hier, Dino ___ sa citrouille.",hint:"گذشتهٔ مرکب (passé composé) را انتخاب کن.",o:["décore","a décoré","décorera","décorait demain"],a:1,why:"Hier + passé composé : a décoré."},
+  {q:"Quel est le pluriel de « un bonbon » ?",hint:"شکل جمع را انتخاب کن.",o:["des bonbon","des bonbons","des bonbone","des bonbonnes"],a:1,why:"Au pluriel, on écrit : des bonbons."},
+  {q:"Les enfants regardent les fantômes. Ils ___ regardent.",hint:"ضمیر مفعولی مستقیم جمع را انتخاب کن.",o:["lui","leur","les","la"],a:2,why:"Les remplace un complément d’objet direct pluriel."},
+  {q:"Quel connecteur exprime une opposition ?",hint:"کدام کلمه معنی «اما» می‌دهد؟",o:["Parce que","Mais","Puis","Donc"],a:1,why:"Mais exprime une opposition."},
+  {q:"La citrouille et ses amis ___ dansent.",hint:"فعل مناسب برای فاعل جمع را انتخاب کن.",o:["est","sont","a","fait"],a:1,why:"La citrouille et ses amis sont plusieurs."}
+ ]
 };
 
 let level="a1",index=0,score=0,streak=0,locked=false;
 
 function renderQuestion(){
-const list=questions[level],q=list[index];
-locked=false;
-$("quizBody").classList.remove("hidden");
-$("result").classList.add("hidden");
-$("counter").textContent=`Question ${index+1} / ${list.length}`;
-$("score").textContent=`🏆 Score : ${score}`;
-$("progress").style.width=(index/list.length*100)+"%";
-$("qlevel").textContent=level==="a1"?"NIVEAU A1":"NIVEAU A2";
-$("qtext").textContent=q.q;
-$("hint").textContent=q.hint;
-$("feedback").textContent="";
-$("next").disabled=true;
-$("next").textContent=index===list.length-1?"Voir le résultat ←":"سؤال بعدی ←";
-const box=$("answers");
-box.replaceChildren();
-q.o.forEach((option,i)=>{
-const b=document.createElement("button");
-b.type="button";b.className="answer";b.textContent=option;
-b.addEventListener("click",()=>answerQuestion(i,b));
-box.appendChild(b);
-});
+  const list=questions[level];
+  const q=list[index];
+  locked=false;
+
+  $("quizBody").classList.remove("hidden");
+  $("result").classList.add("hidden");
+  $("counter").textContent=`Question ${index+1} / ${list.length}`;
+  $("score").textContent=`🏆 Score : ${score}`;
+  $("progress").style.width=(index/list.length*100)+"%";
+  $("qlevel").textContent=level==="a1"?"NIVEAU A1":"NIVEAU A2";
+  $("qtext").textContent=q.q;
+  $("hint").textContent=q.hint;
+  $("feedback").textContent="";
+  $("next").disabled=true;
+  $("next").textContent=index===list.length-1?"Voir le résultat ←":"سؤال بعدی ←";
+
+  const box=$("answers");
+  box.replaceChildren();
+
+  q.o.forEach((option,i)=>{
+    const b=document.createElement("button");
+    b.type="button";
+    b.className="answer";
+    b.textContent=option;
+    b.addEventListener("click",()=>answerQuestion(i,b));
+    box.appendChild(b);
+  });
 }
 
 function answerQuestion(choice,button){
-if(locked)return;
-locked=true;
-const q=questions[level][index];
-const buttons=[...$("answers").querySelectorAll(".answer")];
-buttons.forEach(b=>b.disabled=true);
-if(choice===q.a){
-button.classList.add("correct");
-score+=10;streak++;
-$("feedback").textContent="✨ Bravo ! پاسخ درست است. +10 points. "+q.why;
-$("feedback").style.color="var(--green)";
-celebrate();
-}else{
-button.classList.add("wrong");
-buttons[q.a].classList.add("correct");
-streak=0;
-$("feedback").textContent="💜 پاسخ درست: "+q.o[q.a]+". "+q.why;
-$("feedback").style.color="var(--red)";
-}
-$("score").textContent=`🏆 Score : ${score}`;
-$("streak").textContent=`🔥 Série : ${streak}`;
-$("progress").style.width=((index+1)/questions[level].length*100)+"%";
-$("next").disabled=false;
+  if(locked)return;
+  locked=true;
+
+  const q=questions[level][index];
+  const buttons=[...$("answers").querySelectorAll(".answer")];
+  buttons.forEach(b=>b.disabled=true);
+
+  if(choice===q.a){
+    button.classList.add("correct");
+    score+=10;
+    streak++;
+    $("feedback").textContent="✨ Bravo ! پاسخ درست است. +10 points. "+q.why;
+    $("feedback").style.color="var(--green)";
+    celebrate();
+  }else{
+    button.classList.add("wrong");
+    buttons[q.a].classList.add("correct");
+    streak=0;
+    $("feedback").textContent="💜 پاسخ درست: "+q.o[q.a]+". "+q.why;
+    $("feedback").style.color="var(--red)";
+  }
+
+  $("score").textContent=`🏆 Score : ${score}`;
+  $("streak").textContent=`🔥 Série : ${streak}`;
+  $("progress").style.width=((index+1)/questions[level].length*100)+"%";
+  $("next").disabled=false;
 }
 
 function finishQuiz(){
-$("quizBody").classList.add("hidden");
-$("result").classList.remove("hidden");
-const total=questions[level].length;
-const correct=score/10;
-$("resultEmoji").textContent=correct===total?"🏆":correct>=4?"🎉":"🌱";
-$("resultTitle").textContent=correct===total?"Fantastique !":correct>=4?"Bravo, continue !":"Bon début !";
-$("resultText").textContent=`امتیاز تو ${score} از ${total*10} است. تعداد پاسخ‌های درست: ${correct} از ${total}.`;
-$("counter").textContent="Défi terminé !";
-$("progress").style.width="100%";
-if(correct===total)celebrate();
+  $("quizBody").classList.add("hidden");
+  $("result").classList.remove("hidden");
+
+  const total=questions[level].length;
+  const correct=score/10;
+
+  $("resultEmoji").textContent=correct===total?"🏆":correct>=4?"🎉":"🌱";
+  $("resultTitle").textContent=correct===total?"Fantastique !":correct>=4?"Bravo, continue !":"Bon début !";
+  $("resultText").textContent=`امتیاز تو ${score} از ${total*10} است. تعداد پاسخ‌های درست: ${correct} از ${total}.`;
+  $("counter").textContent="Défi terminé !";
+  $("progress").style.width="100%";
+
+  if(correct===total)celebrate();
 }
 
 function startQuiz(newLevel=level){
-level=newLevel;index=0;score=0;streak=0;locked=false;
-document.querySelectorAll(".level").forEach(b=>b.classList.toggle("active",b.dataset.level===level));
-$("streak").textContent="🔥 Série : 0";
-renderQuestion();
+  level=newLevel;
+  index=0;
+  score=0;
+  streak=0;
+  locked=false;
+
+  document.querySelectorAll(".level").forEach(b=>{
+    b.classList.toggle("active",b.dataset.level===level);
+  });
+
+  $("streak").textContent="🔥 Série : 0";
+  renderQuestion();
 }
 
-document.querySelectorAll(".level").forEach(b=>b.addEventListener("click",()=>startQuiz(b.dataset.level)));
-$("next").addEventListener("click",()=>{
-if(!locked)return;
-if(index<questions[level].length-1){index++;renderQuestion();}
-else finishQuiz();
+document.querySelectorAll(".level").forEach(b=>{
+  b.addEventListener("click",()=>startQuiz(b.dataset.level));
 });
+
+$("next").addEventListener("click",()=>{
+  if(!locked)return;
+  if(index<questions[level].length-1){
+    index++;
+    renderQuestion();
+  }else{
+    finishQuiz();
+  }
+});
+
 $("restartQuiz").addEventListener("click",()=>startQuiz(level));
 $("listenQ").addEventListener("click",()=>speakFrench(questions[level][index].q));
 
@@ -666,23 +862,36 @@ $("listenQ").addEventListener("click",()=>speakFrench(questions[level][index].q)
 let pumpkin={eye:"Round",mouth:"Smile",accessory:"none",firefly:true};
 
 function chooseOption(container,key){
-document.querySelectorAll("#"+container+" .opt").forEach(btn=>{
-btn.addEventListener("click",()=>{
-pumpkin[key]=btn.dataset[key];
-document.querySelectorAll("#"+container+" .opt").forEach(b=>b.classList.toggle("active",b===btn));
-updatePumpkin();
-});
-});
+  document.querySelectorAll("#"+container+" .opt").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      pumpkin[key]=btn.dataset[key];
+      document.querySelectorAll("#"+container+" .opt").forEach(b=>{
+        b.classList.toggle("active",b===btn);
+      });
+      updatePumpkin();
+    });
+  });
 }
 
 function updatePumpkin(){
-["Round","Triangle","Star","Sleep"].forEach(x=>$("eye"+x).style.display=pumpkin.eye===x?"":"none");
-["Smile","Small","Round","Teeth"].forEach(x=>$("mouth"+x).style.display=pumpkin.mouth===x?"":"none");
-["hat","glasses","bow"].forEach(x=>$(x).style.display=pumpkin.accessory===x?"":"none");
-$("firefly").style.display=pumpkin.firefly?"":"none";
-$("fireflyToggle").setAttribute("aria-pressed",String(pumpkin.firefly));
-$("fireflyText").textContent=pumpkin.firefly?"✨ Luciole allumée":"🌙 Luciole éteinte";
-$("pumpkinCaption").textContent=pumpkin.firefly?"Ma citrouille magique et sa luciole ✨":"Ma citrouille d’Halloween 🎃";
+  ["Round","Triangle","Star","Sleep"].forEach(x=>{
+    $("eye"+x).style.display=pumpkin.eye===x?"":"none";
+  });
+
+  ["Smile","Small","Round","Teeth"].forEach(x=>{
+    $("mouth"+x).style.display=pumpkin.mouth===x?"":"none";
+  });
+
+  ["hat","glasses","bow"].forEach(x=>{
+    $(x).style.display=pumpkin.accessory===x?"":"none";
+  });
+
+  $("firefly").style.display=pumpkin.firefly?"":"none";
+  $("fireflyToggle").setAttribute("aria-pressed",String(pumpkin.firefly));
+  $("fireflyText").textContent=pumpkin.firefly?"✨ Luciole allumée":"🌙 Luciole éteinte";
+  $("pumpkinCaption").textContent=pumpkin.firefly?
+    "Ma citrouille magique et sa luciole ✨":
+    "Ma citrouille d’Halloween 🎃";
 }
 
 chooseOption("eyesOptions","eye");
@@ -690,16 +899,25 @@ chooseOption("mouthOptions","mouth");
 chooseOption("accessoryOptions","accessory");
 
 $("fireflyToggle").addEventListener("click",()=>{
-pumpkin.firefly=!pumpkin.firefly;updatePumpkin();
+  pumpkin.firefly=!pumpkin.firefly;
+  updatePumpkin();
 });
 
 $("resetPumpkin").addEventListener("click",()=>{
-pumpkin={eye:"Round",mouth:"Smile",accessory:"none",firefly:true};
-document.querySelectorAll("#eyesOptions .opt").forEach(b=>b.classList.toggle("active",b.dataset.eye==="Round"));
-document.querySelectorAll("#mouthOptions .opt").forEach(b=>b.classList.toggle("active",b.dataset.mouth==="Smile"));
-document.querySelectorAll("#accessoryOptions .opt").forEach(b=>b.classList.toggle("active",b.dataset.accessory==="none"));
-updatePumpkin();
-showToast("🎃 Ta citrouille est prête !");
+  pumpkin={eye:"Round",mouth:"Smile",accessory:"none",firefly:true};
+
+  document.querySelectorAll("#eyesOptions .opt").forEach(b=>{
+    b.classList.toggle("active",b.dataset.eye==="Round");
+  });
+  document.querySelectorAll("#mouthOptions .opt").forEach(b=>{
+    b.classList.toggle("active",b.dataset.mouth==="Smile");
+  });
+  document.querySelectorAll("#accessoryOptions .opt").forEach(b=>{
+    b.classList.toggle("active",b.dataset.accessory==="none");
+  });
+
+  updatePumpkin();
+  showToast("🎃 Ta citrouille est prête !");
 });
 
 /* Memory game */
@@ -707,96 +925,131 @@ let first=null,second=null,boardLocked=false;
 let pairsFound=0,memPoints=0,moveCount=0,roundId=0;
 
 function shuffle(arr){
-for(let i=arr.length-1;i>0;i--){
-const j=Math.floor(Math.random()*(i+1));
-[arr[i],arr[j]]=[arr[j],arr[i]];
-}
-return arr;
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
 }
 
 function drawCard(card){
-const b=document.createElement("button");
-b.type="button";b.className="mem";b.dataset.uid=card.uid;
-b.setAttribute("aria-label","Carte cachée");b.textContent="✦";
-b.addEventListener("click",()=>flipCard(b,card));
-$("memoryGrid").appendChild(b);
+  const b=document.createElement("button");
+  b.type="button";
+  b.className="mem";
+  b.dataset.uid=card.uid;
+  b.setAttribute("aria-label","Carte cachée");
+  b.textContent="✦";
+  b.addEventListener("click",()=>flipCard(b,card));
+  $("memoryGrid").appendChild(b);
 }
 
 function reveal(b,card){
-b.classList.add("revealed");
-b.setAttribute("aria-label",card.item.fr);
-if(card.type==="emoji"){
-b.innerHTML=`<span class="content"><span class="emoji">${card.item.emoji}</span></span>`;
-}else{
-b.innerHTML=`<span class="content">${card.item.fr}</span>`;
-}
+  b.classList.add("revealed");
+  b.setAttribute("aria-label",card.item.fr);
+
+  if(card.type==="emoji"){
+    b.innerHTML=`<span class="content"><span class="emoji">${card.item.emoji}</span></span>`;
+  }else{
+    b.innerHTML=`<span class="content">${card.item.fr}</span>`;
+  }
 }
 
 function conceal(b){
-b.classList.remove("revealed");
-b.setAttribute("aria-label","Carte cachée");
-b.textContent="✦";
+  b.classList.remove("revealed");
+  b.setAttribute("aria-label","Carte cachée");
+  b.textContent="✦";
 }
 
 function flipCard(b,card){
-if(boardLocked||b.classList.contains("revealed")||b.classList.contains("matched"))return;
-reveal(b,card);
-if(!first){first={b,card};return;}
-second={b,card};
-moveCount++;
-$("moves").textContent=`👆 Coups : ${moveCount}`;
-if(first.card.pair===second.card.pair){
-b.classList.add("matched");
-first.b.classList.add("matched");
-b.disabled=true;first.b.disabled=true;
-pairsFound++;memPoints+=20;
-$("pairs").textContent=`🧩 Paires : ${pairsFound} / 6`;
-$("memScore").textContent=`🏆 Score : ${memPoints}`;
-$("memFeedback").textContent=`Bravo ! ${card.item.fr} = ${card.item.fa} ✨`;
-addFoundVocab(card.item);
-first=null;second=null;
-if(pairsFound===6){
-$("memFeedback").textContent=`🏆 Fantastique ! Toutes les paires trouvées en ${moveCount} coups !`;
-celebrate();
-}
-}else{
-boardLocked=true;
-const thisRound=roundId;
-$("memFeedback").textContent="دوباره تلاش کن! کارت‌ها را با دقت به خاطر بسپار.";
-const a=first.b,c=second.b;
-setTimeout(()=>{
-if(thisRound!==roundId)return;
-conceal(a);conceal(c);
-first=null;second=null;boardLocked=false;
-},850);
-}
+  if(boardLocked||b.classList.contains("revealed")||b.classList.contains("matched"))return;
+
+  reveal(b,card);
+
+  if(!first){
+    first={b,card};
+    return;
+  }
+
+  second={b,card};
+  moveCount++;
+  $("moves").textContent=`👆 Coups : ${moveCount}`;
+
+  if(first.card.pair===second.card.pair){
+    b.classList.add("matched");
+    first.b.classList.add("matched");
+    b.disabled=true;
+    first.b.disabled=true;
+
+    pairsFound++;
+    memPoints+=20;
+
+    $("pairs").textContent=`🧩 Paires : ${pairsFound} / 6`;
+    $("memScore").textContent=`🏆 Score : ${memPoints}`;
+    $("memFeedback").textContent=`Bravo ! ${card.item.fr} = ${card.item.fa} ✨`;
+
+    addFoundVocab(card.item);
+
+    first=null;
+    second=null;
+
+    if(pairsFound===6){
+      $("memFeedback").textContent=`🏆 Fantastique ! Toutes les paires trouvées en ${moveCount} coups !`;
+      celebrate();
+    }
+  }else{
+    boardLocked=true;
+    const thisRound=roundId;
+    $("memFeedback").textContent="دوباره تلاش کن! کارت‌ها را با دقت به خاطر بسپار.";
+
+    const a=first.b;
+    const c=second.b;
+
+    setTimeout(()=>{
+      if(thisRound!==roundId)return;
+      conceal(a);
+      conceal(c);
+      first=null;
+      second=null;
+      boardLocked=false;
+    },850);
+  }
 }
 
 function addFoundVocab(item){
-$("vocabArea").classList.remove("hidden");
-if($("vocabFound").querySelector(`[data-vocab="${item.id}"]`))return;
-const row=createVocabCard(item);
-row.dataset.vocab=item.id;
-$("vocabFound").appendChild(row);
-speakFrench(item.fr);
+  $("vocabArea").classList.remove("hidden");
+
+  if($("vocabFound").querySelector(`[data-vocab="${item.id}"]`))return;
+
+  const row=createVocabCard(item);
+  row.dataset.vocab=item.id;
+  $("vocabFound").appendChild(row);
+  speakFrench(item.fr);
 }
 
 function restartMemory(){
-roundId++;
-first=null;second=null;boardLocked=false;
-pairsFound=0;memPoints=0;moveCount=0;
-$("memoryGrid").replaceChildren();
-$("vocabFound").replaceChildren();
-$("vocabArea").classList.add("hidden");
-$("pairs").textContent="🧩 Paires : 0 / 6";
-$("memScore").textContent="🏆 Score : 0";
-$("moves").textContent="👆 Coups : 0";
-$("memFeedback").textContent="شش جفت را پیدا کن!";
-const deck=shuffle(vocab.slice(0,6).flatMap(item=>[
-{uid:item.id+"-emoji",pair:item.id,type:"emoji",item},
-{uid:item.id+"-word",pair:item.id,type:"word",item}
-]));
-deck.forEach(drawCard);
+  roundId++;
+  first=null;
+  second=null;
+  boardLocked=false;
+  pairsFound=0;
+  memPoints=0;
+  moveCount=0;
+
+  $("memoryGrid").replaceChildren();
+  $("vocabFound").replaceChildren();
+  $("vocabArea").classList.add("hidden");
+
+  $("pairs").textContent="🧩 Paires : 0 / 6";
+  $("memScore").textContent="🏆 Score : 0";
+  $("moves").textContent="👆 Coups : 0";
+  $("memFeedback").textContent="شش جفت را پیدا کن!";
+
+  const deck=shuffle(vocab.slice(0,6).flatMap(item=>[
+    {uid:item.id+"-emoji",pair:item.id,type:"emoji",item},
+    {uid:item.id+"-word",pair:item.id,type:"word",item}
+  ]));
+
+  deck.forEach(drawCard);
 }
 
 $("restartMemory").addEventListener("click",restartMemory);
